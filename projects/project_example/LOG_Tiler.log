@@ -1,0 +1,43 @@
+24.12 15:46 [INFO] → 019   🍁 projects/project_example
+24.12 15:46 [INFO] → 025   {'description': 'Dummy tiler.\n',
+ 'dirs': {'data': 'data',
+          'models': 'models',
+          'results': 'predictions_raster',
+          'tiles': 'tiles',
+          'vectors': 'predictions_vector'},
+ 'files': {'aoi': None,
+           'bg': ['data/bg-B.gpkg', None],
+           'images_predict': ['data/raster-A.tif'],
+           'images_train': ['data/raster-A.tif', 'data/raster-B.tif'],
+           'labels': ['data/anno-A.gpkg', 'data/anno-B.gpkg']},
+ 'project': 'This is a dummy project.',
+ 'settings': {'augment_ratio': 0,
+              'drop_bg_ratio': 1,
+              'label_identifier': {'class_id': 1},
+              'prediction_threshold': 5,
+              'save_tiles': True,
+              'split_ratio': [0.7, 0.25, 0.05],
+              'strip_alpha_channel': True,
+              'tilesize': 256,
+              'tilestride': 256}}
+24.12 15:46 [INFO] → 058   ✅ Config Validation Passed.
+24.12 15:46 [INFO] → 314   Project: This is a dummy project.
+24.12 15:46 [INFO] → 045   Initializing Tiler
+24.12 15:46 [INFO] → 046   Tilesize 256, splitsize [0.7, 0.25, 0.05]
+24.12 15:46 [WARNING] → 053   Saving tiles is enabled. This will create PNG for each tile. This will slow down the process.
+24.12 15:46 [INFO] → 057   Recreating tiles folder tiles/tiles
+24.12 15:46 [INFO] → 089   Loading background from data/bg-B.gpkg
+24.12 15:46 [INFO] → 097   Loaded labels from data/anno-A.gpkg
+24.12 15:46 [INFO] → 100   Creating tilewindows from data/raster-A.tif
+24.12 15:47 [INFO] → 134    Added 783 tilewindows
+24.12 15:47 [INFO] → 097   Loaded labels from data/anno-B.gpkg
+24.12 15:47 [INFO] → 100   Creating tilewindows from data/raster-B.tif
+24.12 15:47 [INFO] → 134    Added 1566 tilewindows
+24.12 15:47 [INFO] → 138   Converting tilewindows to a GeoDataFrame
+24.12 15:47 [INFO] → 156   Dropping empty tiles
+24.12 15:47 [INFO] → 165   Dropping 1198 / 1566 tiles
+24.12 15:47 [INFO] → 175   Appending splits to tilewindows
+24.12 15:47 [INFO] → 189   Appending augmentations to tilewindows
+24.12 15:47 [INFO] → 149   🚀 Saved tilewindows to tiles/tilewindows.gpkg
+24.12 15:47 [INFO] → 097   Loaded labels from data/anno-A.gpkg
+24.12 15:47 [INFO] → 208   Reading image data from data/raster-A.tif

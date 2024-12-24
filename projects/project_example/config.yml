@@ -1,0 +1,40 @@
+---
+project: This is a dummy project.
+description: >
+  Dummy tiler.
+files: # Paths relative to the specified project path
+  labels:
+    [
+      data/anno-A.gpkg,
+      data/anno-B.gpkg,
+    ]
+  images_train:
+    [
+      data/raster-A.tif,
+      data/raster-B.tif,
+    ]
+  bg:
+    [
+      data/bg-B.gpkg,
+      null,
+    ]
+  images_predict: [
+    data/raster-A.tif, # if your dont predict, just use the same as a training image
+    ]
+  aoi: #data/aoi.gpkg # path to the aoi (leave empty if necessary)
+dirs:
+  results: predictions_raster
+  vectors: predictions_vector
+  data: data
+  models: models
+  tiles: tiles
+settings:
+  tilesize: 256 # size of the tiles
+  tilestride: 256 # stride of the tiles #TODO: Implement
+  split_ratio: [0.70, 0.25, 0.05]
+  label_identifier: { "class_id": 1 } # name of the class
+  augment_ratio: 0 # chance of augmenting a training tile
+  drop_bg_ratio: 1 # chance of dropping tiles without labels
+  strip_alpha_channel: true # drop transparency channel
+  save_tiles: true
+  prediction_threshold: 5 # threshold for prediction

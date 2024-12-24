@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - ./projects:/app/projects
+      - ./test:/app/test
+    ports:
+      - "2000:2000"
+
+    # CREATE TRAINING TILES
+    command: "python sps-training-tiler.py -proj projects/project_example"
+    
+    # VECTORIZE RASTERS
+    # command: "python sps-vectorize-raster.py -proj projects/proj-duizendknoop"
+
+    # INITILIASE NEW PROJ -> not needed if using project_example as template.
+    # command: "python sps-init-proj.py -proj projects/proj-leende/zand"
+
+    
